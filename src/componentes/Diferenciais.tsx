@@ -48,7 +48,7 @@ export default function Diferenciais() {
             <br /> Na WM Topografia, precisão e documentação são indispensáveis.
           </p>
 
-          <div className="w-full grid grid-cols-[50%_45%] ">
+          <div className="w-full grid grid-cols-1 md:grid-cols-[50%_45%] gap-4 md:gap-0">
             {/* GRID DE DIFERENCIAIS (ESTILO MICRO) */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-2">
               {diferenciais.map((item, index) => (
@@ -70,7 +70,7 @@ export default function Diferenciais() {
             </div>
 
             {/* IMAGEM AO LADO DO GRID DE DIFERENCIAIS */}
-            <div className="relative flex justify-end -translate-y-6 md:-translate-y-8">
+            <div className="relative flex justify-center md:justify-end translate-y-0 md:-translate-y-8 mt-2 md:mt-0">
               <div className="absolute top-1/4 left-1/2 -translate-x-1/4 -translate-y-1/2 w-70 h-65 bg-blue-400/10 blur-[60px] rounded-full pointer-events-none"></div>
 
               <img
