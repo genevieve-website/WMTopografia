@@ -16,6 +16,9 @@ export default function Hero() {
         autoPlay
         loop
         muted
+        playsInline // OBRIGATÓRIO para iPhone
+        webkit-playsinline // Compatibilidade com versões antigas do iOS
+        preload="auto" // Força o navegador a começar o download logo
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source src={wmVideo} type="video/mp4" />
