@@ -1,10 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import { Star } from "lucide-react"; // Ícone de estrela para o Google
-import depo1 from "../assets/imagens/instagram .jpg";
-import depo2 from "../assets/imagens/whats.jpg";
-import depo3 from "../assets/imagens/instagram .jpg";
-import depo4 from "../assets/imagens/whats.jpg";
 
 // Estilos do Swiper
 import "swiper/css";
@@ -13,54 +9,33 @@ import "swiper/css/pagination";
 const avaliacoes = [
   {
     id: 1,
-    tipo: "whatsapp",
-    imagem: depo1, // Caminho do seu print
+    tipo: "google",
+    nome: "Damiana Leite Melo",
+    texto:
+      "Muito bom ótimo até atendimento atenção é compromisso,com o cliente.",
+    estrelas: 5,
   },
   {
     id: 2,
     tipo: "google",
-    nome: "Ricardo Almeida",
-    texto:
-      "Atendimento excepcional. O William foi muito preciso na demarcação do meu terreno e entregou a documentação antes do prazo.",
+    nome: "Sérgio Oliveira",
+    texto: "Empresa séria, profissionais dedicados!",
     estrelas: 5,
   },
   {
     id: 3,
-    tipo: "whatsapp",
-    imagem: depo2, // Caminho do seu print
+    tipo: "google",
+    nome: "Dgs siq",
+    texto:
+      "Profissionais excepcionais, desempenham um trabalho com muita excelência e qualidade; com muitos diferenciais, e preço justo.",
+    estrelas: 5,
   },
   {
     id: 4,
     tipo: "google",
-    nome: "Construtora Silva",
+    nome: "Arthur Henrique",
     texto:
-      "Trabalhamos com a WM há 2 anos. Empresa séria, com equipamentos modernos e equipe muito bem preparada para segurança do trabalho.",
-    estrelas: 5,
-  },
-  {
-    id: 5,
-    tipo: "whatsapp",
-    imagem: depo3, // Caminho do seu print
-  },
-  {
-    id: 6,
-    tipo: "google",
-    nome: "Fernanda Costa",
-    texto:
-      "Serviço impecável. A equipe foi muito atenciosa e entregou todo o levantamento com muita agilidade.",
-    estrelas: 5,
-  },
-  {
-    id: 7,
-    tipo: "whatsapp",
-    imagem: depo4, // Caminho do seu print
-  },
-  {
-    id: 8,
-    tipo: "google",
-    nome: "Carlos Mendes",
-    texto:
-      "Excelente atendimento e precisão técnica. Recomendo a WM para qualquer demanda topográfica.",
+      "Serviço de topografia com tecnologia ,qualidade, transparência e preço justo.",
     estrelas: 5,
   },
 ];
@@ -90,52 +65,53 @@ export default function Depoimentos() {
           className="pb-8"
         >
           {avaliacoes.map((item) => (
-            <SwiperSlide key={item.id} className="!w-[200px]">
-              <div className="h-[400px] w-[200px] flex items-center justify-center">
-                {item.tipo === "whatsapp" ? (
-                  /* CARD TIPO WHATSAPP (PRINT) */
-                  <div className="w-full h-full p-2 bg-slate-100 rounded-3xl shadow-md overflow-hidden border-4 border-white">
-                    <img
-                      src={item.imagem}
-                      alt="Feedback WhatsApp"
-                      className="w-full h-full object-cover rounded-2xl"
-                    />
+            <SwiperSlide key={item.id} className="!w-[300px]">
+              <div className="h-[320px] w-[300px] flex items-center justify-center">
+                {/* CARD TIPO TEXTO */}
+                <div className="w-full h-full p-6 bg-slate-50 rounded-3xl shadow-md border border-slate-100 flex flex-col justify-between">
+                  <div>
+                    <div className="flex gap-1 mb-6">
+                      {[...Array(item.estrelas)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-yellow-400 text-yellow-400"
+                        />
+                      ))}
+                    </div>
+                    <p className="text-slate-700 italic text-sm leading-relaxed">
+                      "{item.texto}"
+                    </p>
                   </div>
-                ) : (
-                  /* CARD TIPO GOOGLE (TEXTO) */
-                  <div className="w-full h-full p-5 bg-slate-50 rounded-3xl shadow-md border border-slate-100 flex flex-col justify-between">
+                  <div className=" flex items-center gap-3">
+                    <div className="w-9 h-9 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                      {item.nome?.charAt(0)}
+                    </div>
                     <div>
-                      <div className="flex gap-1 mb-3">
-                        {[...Array(item.estrelas)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className="w-4 h-4 fill-yellow-400 text-yellow-400"
-                          />
-                        ))}
-                      </div>
-                      <p className="text-slate-700 italic text-sm leading-relaxed">
-                        "{item.texto}"
+                      <p className="font-bold text-slate-900 text-sm">
+                        {item.nome}
+                      </p>
+                      <p className="text-xs text-gray-500 font-medium">
+                        Avaliação via Google
                       </p>
                     </div>
-                    <div className="mt-4 flex items-center gap-3">
-                      <div className="w-9 h-9 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                        {item.nome?.charAt(0)}
-                      </div>
-                      <div>
-                        <p className="font-bold text-slate-900 text-sm">
-                          {item.nome}
-                        </p>
-                        <p className="text-xs text-gray-500 font-medium">
-                          Avaliação via Google
-                        </p>
-                      </div>
-                    </div>
                   </div>
-                )}
+                </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
+
+        {/* Botão para ver todas as avaliações */}
+        <div className="text-center mt-8">
+          <a
+            href="https://share.google/V90RjxmHcaVGDIaKP"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-blue-700 transition-colors shadow-lg"
+          >
+            Conferir Todas as Avaliações
+          </a>
+        </div>
       </div>
 
       {/* Ajuste customizado para as bolinhas do Swiper não sumirem no fundo branco */}

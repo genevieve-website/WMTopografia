@@ -7,6 +7,7 @@ import Parceiro from "./componentes/Parceiros";
 import Footer from "./componentes/Footer";
 import Depoimentos from "./componentes/Depo";
 import Diferenciais from "./componentes/Diferenciais";
+import FAQ from "./componentes/FAQ";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Services />
         <Depoimentos />
         <Diferenciais />
+        <FAQ />
       </main>
       <Footer />
 

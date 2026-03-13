@@ -13,43 +13,42 @@ const servicos = [
   {
     titulo: "Georreferenciamento",
     descricao:
-      "Certificação de imóveis rurais e urbanos junto ao INCRA, definindo limites com precisão GPS.",
+      "O georreferenciamento de imóveis rurais é a delimitação precisa do imóvel através de coordenadas geográficas certificadas pelo INCRA. Na WM Topografia, garantimos que sua propriedade esteja em conformidade com a Lei 10.267, assegurando a segurança jurídica e evitando sobreposições de área.",
     icone: <Compass className="w-8 h-8" />,
     imagem: image2,
   },
   {
     titulo: "Levantamento Planialtimétrico",
     descricao:
-      "Mapeamento detalhado de todas as características do terreno, incluindo relevo e elementos existentes.",
+      "O levantamento planialtimétrico é o mapeamento detalhado que registra as dimensões horizontais e as diferenças de nível (relevo) de um terreno. É o documento base indispensável para engenheiros e arquitetos iniciarem qualquer projeto de construção ou terraplenagem com segurança.",
     icone: <Ruler className="w-8 h-8" />,
     imagem: image1,
   },
-
   {
     titulo: "Loteamento e Desmembramento",
     descricao:
-      "Projetos técnicos para divisão de glebas em lotes, respeitando as normas urbanísticas vigentes.",
+      "Loteamento e desmembramento são processos de divisão de glebas em áreas menores para fins urbanos ou rurais. Elaboramos todo o projeto técnico e memorial descritivo seguindo as normas municipais para facilitar a aprovação em prefeituras e o registro em cartório.",
     icone: <Map className="w-8 h-8" />,
     imagem: image3,
   },
   {
-    titulo: "Levantamento Topográfico para Obras",
+    titulo: "Topografia para Obras",
     descricao:
-      "Transferência precisa dos eixos do projeto para o terreno, garantindo a execução fiel da planta.",
+      "A topografia para obras é a transferência precisa dos eixos e pontos do projeto para o terreno real. Nossa equipe garante que a execução da fundação, pilares e estruturas siga fielmente a planta, eliminando erros de posicionamento que geram prejuízos financeiros.",
     icone: <HardHat className="w-8 h-8" />,
     imagem: image4,
   },
   {
-    titulo: "Levantamento Topográfico de Usocapião",
+    titulo: "Levantamento para Usucapião",
     descricao:
-      "Documentação técnica final que registra exatamente como a obra foi executada para futuras reformas.",
+      "O levantamento para usucapião é a planta topográfica e o memorial descritivo exigidos judicialmente para regularizar a posse de um imóvel. Documentamos limites e confrontantes com precisão técnica para que seu processo judicial tenha total validade perante o juiz e o cartório.",
     icone: <FileText className="w-8 h-8" />,
     imagem: image5,
   },
   {
     titulo: "Cálculo de Volume",
     descricao:
-      "Medição exata de movimentação de terra (corte e aterro) para controle de custos e logística.",
+      "O cálculo de volume (cubagem) é a medição exata da movimentação de terra, como cortes e aterros, em um canteiro de obras. Com dados precisos, você otimiza a logística de caminhões e evita cobranças indevidas de empreiteiras, mantendo o controle rigoroso dos custos.",
     icone: <Mountain className="w-8 h-8" />,
     imagem: image6,
   },

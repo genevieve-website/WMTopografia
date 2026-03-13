@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Aponta o caminho para o robô encontrar seu sitemap automaticamente
+Sitemap: https://wmtopografiaegeo.com.br/sitemap.xml
