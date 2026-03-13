@@ -1,59 +1,73 @@
-// src/componentes/Hero.tsx
-import wmVideo from "../assets/videos/brift.mp4"; // Exemplo: se estiver em src/assets/
-// import imagemBG from "../assets/imagens/Scanner.jpg"; // Imagem de backup, se desejar
+import wmVideo from "../assets/videos/HeroWM.mp4";
+// Importe uma imagem estática para carregar antes do vídeo (Essencial para LCP no SEO)
+
+import posterImg from "../assets/imagens/residencial.jpg";
+
 export default function Hero() {
   return (
-    <section id="hero" className="relative w-full h-[85vh] overflow-hidden">
-      {/* 1. O VÍDEO DE FUNDO (COMO NA IMAGEM DE REFERÊNCIA, MAS COM VÍDEO) */}
-      {/*
-      <img
-        src={imagemBG}
-        alt="Topografia WM"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-      */}
+    <section
+      id="hero"
+      className="relative w-full h-[90vh] overflow-hidden flex items-center"
+    >
+      {/* 1. Background com Poster para Performance */}
       <video
         autoPlay
         loop
         muted
-        playsInline // OBRIGATÓRIO para iPhone
-        webkit-playsinline // Compatibilidade com versões antigas do iOS
-        preload="auto" // Força o navegador a começar o download logo
+        playsInline
+        poster={posterImg}
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source src={wmVideo} type="video/mp4" />
-        Seu navegador não suporta vídeos.
       </video>
 
-      {/* 2. OVERLAY ESCURO PARA GARANTIR LEGIBILIDADE DO TEXTO (CONTRÁRIO DO EXEMPLO Grigolato QUE É MAIS CLARO, MAS IMPORTANTE PARA TEXTO BRANCO) */}
-      <div className="absolute inset-0 bg-black/50 z-10" />
+      {/* 2. Overlay com Gradiente (Melhora leitura e profundidade) */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
 
-      <div className="relative z-20 flex flex-col items-center justify-center h-full text-center text-white px-6">
-        {/* Subtítulo (Seguindo o print exemplo que tem um texto menor) */}
-        <p className="uppercase tracking-[0.2em] text-xs font-light mb-5">
-          SOLUÇÕES EM TOPOGRAFIA E GEORREFERENCIAMENTO
-        </p>
+      <div className="container mx-auto relative z-20 px-6">
+        <div className="max-w-4xl text-left">
+          {" "}
+          {/* Alinhado à esquerda passa mais autoridade técnica */}
+          {/* Tag de Contexto - Uppercase para visual técnico */}
+          <p className="uppercase tracking-widest text-white font-bold text-sm mb-4">
+            Engenharia de Precisão & Geoprocessamento
+          </p>
+          {/* H1: Onde o SEO acontece. Palavras-chave: Topografia, Precisão, Obra */}
+          <h1 className="text-4xl md:text-7xl font-black text-wm-accent mb-6 leading-tight">
+            Precisão Centimétrica <br />
+            <span className="text-white">
+              para <br /> Garantir sua Obra.
+            </span>
+          </h1>
+          {/* Descrição: Foco na dor do cliente (Evitar prejuízo e multas) */}
+          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed">
+            Evite erros de execução e problemas judiciais. Levantamentos
+            <strong> Planialtimétricos</strong> e{" "}
+            <strong>Georreferenciamento</strong> com certificação técnica
+            (SIGEF/INCRA) em toda São Paulo.
+          </p>
+          {/* Botões de Ação */}
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="https://wa.me/5511970928498?text=Olá!%20William,%20vim%20do%20seu%20site..."
+              className="bg-wm-primary  text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-sky-500 transition-all text-center shadow-lg shadow-sky-900/20"
+            >
+              SOLICITAR ORÇAMENTO AGORA
+            </a>
 
-        {/* Título Principal (Texto central grande como no print exemplo) */}
-        <h1 className="text-4xl md:text-6xl font-extrabold mb-7 leading-tight max-w-5xl">
-          Previsão e Precisão <br />{" "}
-          <span className="text-sky-400">para sua Obra</span>
-        </h1>
-
-        {/* Descrição (Semelhante ao print exemplo) */}
-        <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-3xl mx-auto">
-          Levantamentos Planialtimétricos com certificação técnica <br />
-          para terrenos de qualquer porte em São Paulo. Melhore seu
-          custo-benefício.
-        </p>
-
-        {/* Botão de Ação (Adaptado) */}
-        <a
-          href="https://wa.me/5511970928498?text=Olá!%20William,%20vim%20do%20seu%20site,%20gostaria%20de%20saber%20mais%20informaçoes%20sobre%20seus%20serviços."
-          className="bg-white text-gray-950 px-12 py-4 rounded-full font-bold text-xl hover:bg-gray-100 transition shadow-2xl flex items-center gap-2"
-        >
-          SOLICITAR ORÇAMENTO
-        </a>
+            <a
+              href="#servicos"
+              className="border border-white/30 bg-wm-accent text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-all text-center"
+            >
+              VER SERVIÇOS
+            </a>
+          </div>
+          {/* Trust Badge / Prova Social rápida */}
+          <div className="mt-10 flex items-center gap-2 text-gray-400 text-sm italic">
+            <span className="w-8 h-[1px] bg-gray-600"></span>
+            Certificação Técnica e Profissionais Registrados no CREA
+          </div>
+        </div>
       </div>
     </section>
   );
